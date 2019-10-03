@@ -1,7 +1,7 @@
 #  PuppetTCERR
 Repositório com Catálogos Puppet para diferentes tipos de servidores.
 
-# COMO INSTALAR O AGENTE PUPPET:
+# Como Instalar o Agente Puppet:
 
 Debian 8.X:
 cd /tmp
@@ -31,7 +31,7 @@ yum -y install puppet-agent
 export PATH=/opt/puppetlabs/bin:$PATH
 echo "PATH=/opt/puppetlabs/bin:$PATH" >> /etc/bashrc
 
-# PARA ESTABELECER A COMUNICAÇÃO ENTRE AGENTE E SERVIDOR:
+# Para Estabelecer a Comunicação Entre Agente e Servidor:
 
 Editar o arquivo /etc/puppetlabs/puppet/puppet.conf e adicionar as linhas:
 
@@ -43,5 +43,5 @@ environment = production
 report = true
 pluginsync = true
 
-# Após isso, solicitar o certificado para o Servidor com o comando: 'puppet agent -t'
-# Assim que o certificado for autenticado no servidor, para aplicar os catálogos, digitar o mesmo comando: 'puppet agent -t'.
+Após isso, solicitar o certificado para o Servidor com o comando: 'puppet agent -t'.
+Assim que o certificado for autenticado no servidor, para aplicar os catálogos, digitar o mesmo comando: 'puppet agent -t'.
