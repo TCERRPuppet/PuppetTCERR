@@ -3,13 +3,13 @@ Repositório com Catálogos Puppet para diferentes tipos de servidores.
 
 # Como Instalar o Agente Puppet:
 
-Debian 8.X:
+Debian 10.X:
 
 cd /tmp
 
-wget http://apt.puppet.com/puppetlabs-release-pc1-jessie.deb
+wget https://apt.puppetlabs.com/puppet-release-buster.deb
 
-dpkg -i puppetlabs-release-pc1-jessie.deb
+dpkg -i puppet-release-buster.deb
 
 
 Debian 9.X:
@@ -53,13 +53,19 @@ echo "PATH=/opt/puppetlabs/bin:$PATH" >> /etc/bashrc
 
 # Para Estabelecer a Comunicação Entre Agente e Servidor:
 
-Editar o arquivo /etc/puppetlabs/puppet/puppet.conf e adicionar as linhas:
+
+# Editar o arquivo /etc/hosts e adcionar a seguinte linha:
+
+10.10.210.4     puppetserver.tcerr.gov.br puppetserver
+
+
+# Editar o arquivo /etc/puppetlabs/puppet/puppet.conf e adicionar as linhas:
 
 [main]
 
 certname = {hostname --fqdn}
 
-server = {servername --fqdn}
+server = puppetserver.tcerr.gov.br
 
 environment = production
 
@@ -68,6 +74,7 @@ environment = production
 report = true
 
 pluginsync = true
+
 
 Após isso, solicitar o certificado para o Servidor com o comando: 'puppet agent -t'.
 
