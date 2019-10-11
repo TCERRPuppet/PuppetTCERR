@@ -76,6 +76,8 @@ report = true
 pluginsync = true
 
 
-Após isso, solicitar o certificado para o Servidor com o comando: 'puppet agent -t'.
+# Solicitar Certificado:
+
+Solicitar o certificado para o Servidor com o comando: 'puppet agent -t'.
 
 Assim que o certificado for autenticado no servidor, para aplicar os catálogos, digitar o mesmo comando: 'puppet agent -t'.
